@@ -1,0 +1,53 @@
+
+name: Firebase Hosting - deploy
+
+on:
+  push:
+    branches: [ "master" ]
+
+env:
+  NODE_VERSION: 16.x
+  BUILD_ARTIFACT_NAME: doc-build
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Build Documentation
+        run: npx --yes antora site.yml
+
+      - name: Upload building artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.BUILD_ARTIFACT_NAME }}
+          path: build
+
+  deploy:
+    name: Deploy in GitHub Pages
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download building artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ env.BUILD_ARTIFACT_NAME }}
+          path: build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.GH_DEPLOY_KEY }}
+          publish_dir: ./build
