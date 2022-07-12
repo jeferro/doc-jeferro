@@ -3,6 +3,7 @@ name: Firebase Hosting - deploy
 
 on:
   push:
+    branches: [ "master" ]
 
 env:
   NODE_VERSION: 16.x
@@ -49,4 +50,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.GH_DEPLOY_KEY }}
-          publish_dir: ./build/site
+          publish_dir: ./build
