@@ -1,1 +1,1 @@
-* xref:index.adoc[Home]
+* xref:home.adoc[Home]

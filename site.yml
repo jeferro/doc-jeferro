@@ -1,7 +1,7 @@
 site:
-  title: JF Documentation
+  title: JF Team
   url: https://example.org/docs
-  start_page: docs:ROOT:index.adoc
+  start_page: docs:ROOT:home.adoc
 
 content:
   sources:

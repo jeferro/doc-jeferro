@@ -1,0 +1,29 @@
+
+= Development
+
+== Instalación en local
+
+Para instalar la aplicación en local se deben instalar las librerías necesarias:
+
+[source,bash]
+----
+npm install
+----
+
+Y generar por primera vez la documentación:
+
+[source,bash]
+----
+npm run build
+----
+
+
+
+== Desarrollo en local
+
+La documentación está preparada para autogenerarse en local con cualquier cambio que se realice en ella, para lo cual debemos ejecutarla en modo debug:
+
+[source,bash]
+----
+npm run debug
+----

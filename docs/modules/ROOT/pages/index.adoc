@@ -1,9 +1,0 @@
-
-= JF Team
-
-Welcome to the JF Team 👋
-
-
-== Wallet
-[grid, 2, "wallet-grid"]
-include::ROOT:partial$wallet.json[]
