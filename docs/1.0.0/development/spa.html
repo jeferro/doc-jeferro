@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Development :: JF Team</title>
-    <link rel="canonical" href="https://example.org/docs/docs/1.0.0/doc-jeferro/development.html">
-    <link rel="prev" href="../development/spa.html">
-    <link rel="next" href="../spa-wallet/getting-started.html">
+    <title>SPA :: JF Team</title>
+    <link rel="canonical" href="https://example.org/docs/docs/1.0.0/development/spa.html">
+    <link rel="prev" href="../home.html">
+    <link rel="next" href="../doc-jeferro/development.html">
     <meta name="generator" content="Antora 3.0.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -43,8 +43,8 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Development</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../development/spa.html">SPA</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="spa.html">SPA</a>
   </li>
 </ul>
   </li>
@@ -52,8 +52,8 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">DOC Jeferro</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="development.html">Development</a>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../doc-jeferro/development.html">Development</a>
   </li>
 </ul>
   </li>
@@ -79,44 +79,85 @@
 <button class="nav-toggle"></button>
   <div class="content">
 <article class="doc">
-<h1 class="page">Development</h1>
+<h1 class="page">SPA</h1>
 <div class="sect1">
-<h2 id="instalación-en-local"><a class="anchor" href="#instalación-en-local"></a>Instalación en local</h2>
+<h2 id="firebase-hosting"><a class="anchor" href="#firebase-hosting"></a>Firebase Hosting</h2>
 <div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Antes de realizar esta configuración, el proyecto Firebase debe estar correctamente creado y configurado.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="development"><a class="anchor" href="#development"></a>Development</h3>
 <div class="paragraph">
-<p>Para instalar la aplicación en local se deben instalar las librerías necesarias:</p>
+<p>Al ser la primera vez que se configura el hosting en la aplicación, se debe crear un directorio para el packaging:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir -p packaging/firebase</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Y generar por primera vez la documentación:</p>
+<p>Y a continuación configurar Firebase en dicho packaging:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run build</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd packaging/firebase
+
+firebase init
+
+? Which Firebase features do you want to set up for this directory?
+Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+
+? Select a default Firebase project for this directory:
+&lt;nombre proyecto&gt;
+
+? Please select an option:
+Use an existing project
+
+? What do you want to use as your public directory?
+public
+
+? Configure as a single-page app (rewrite all urls to /index.html)? y
+
+? Set up automatic builds and deploys with GitHub?
+n</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="desarrollo-en-local"><a class="anchor" href="#desarrollo-en-local"></a>Desarrollo en local</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>La documentación está preparada para autogenerarse en local con cualquier cambio que se realice en ella, para lo cual debemos ejecutarla en modo debug:</p>
+<p>Y por último, modificar el archivo <em>".firebasesrc"</em> generado, actualizando la propiedad "projects.default" a "project.development".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="production"><a class="anchor" href="#production"></a>Production</h3>
+<div class="paragraph">
+<p>Como el proyecto ya se configuró para desarrollo, se debe añadir la configuración de produción unicamente:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run debug</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">firebase use --add
+
+? Which project do you want to add?
+&lt;nombre_proyecto_firebase&gt;
+
+? What alias do you want to use for this project?
+(e.g. staging) production</code></pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../development/spa.html">SPA</a></span>
-  <span class="next"><a href="../spa-wallet/getting-started.html">Getting started</a></span>
+  <span class="prev"><a href="../home.html">Home</a></span>
+  <span class="next"><a href="../doc-jeferro/development.html">Development</a></span>
 </nav>
 </article>
   </div>

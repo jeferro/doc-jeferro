@@ -40,6 +40,15 @@
   </li>
   <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../development/spa.html">SPA</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">DOC Jeferro</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
@@ -73,65 +82,22 @@
 <div class="sect1">
 <h2 id="firebase"><a class="anchor" href="#firebase"></a>Firebase</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Como primer paso, después de crear un nuevo proyecto en Firebase, debemos registrar una nueva aplicación Javascript en en proyecto para obtener los datos de configuración de la conexión de la SPA a Firebase.</p>
+</div>
+<div class="paragraph">
+<p>Y a continuación, activar los siguientes módulos:</p>
+</div>
 <div class="sect2">
 <h3 id="autenticación"><a class="anchor" href="#autenticación"></a>Autenticación</h3>
 <div class="paragraph">
-<p>La autenticación debe estar activada con las siguientes configuraciones:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>modo: correo electrónico/contraseña</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="hosting"><a class="anchor" href="#hosting"></a>Hosting</h3>
-<div class="paragraph">
-<p>Firebase Hosting debe activarse en la consola de administración de Firebase y ejecutar el siguiente el comando "firebase init" si es el primer proyecto que se configura:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>? Which Firebase features do you want to set up for this directory?
-Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
-? Select a default Firebase project for this directory: &lt;nombre proyecto&gt;
-? Please select an option:
-Use an existing project
-? What do you want to use as your public directory? build
-? Configure as a single-page app (rewrite all urls to /index.html)? y
-? Set up automatic builds and deploys with GitHub? n</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Además, se debe modificar la propiedad "projects.default" como "project.development" en el archivo "code/.firebasesrc".</p>
-</div>
-<div class="paragraph">
-<p>Y por último, en el historial de actualizaciones del dominio, se debe pulsar la opción "Configuración de almacenamiento de actualizaciones" y establecer el valor "3".</p>
-</div>
-<div class="paragraph">
-<p>Si estamos configurando el proyecto de producción, debemos activar el hosting en la consola de Firebase y ejecutar el comando "firebase use --add":app-name:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>? Which project do you want to add? &lt;nombre_proyecto_firebase&gt;
-? What alias do you want to use for this project? (e.g. staging) production</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="app-distribution"><a class="anchor" href="#app-distribution"></a>App Distribution</h3>
-<div class="paragraph">
-<p>App Distribution debe estar activado. Por lo que deberemos configurar una aplicación Android en el proyecto.</p>
+<p>Activar la autenticación tipo <em>"correo electrónico/contraseña"</em>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="firestore-database"><a class="anchor" href="#firestore-database"></a>Firestore Database</h3>
 <div class="sect3">
-<h4 id="activación"><a class="anchor" href="#activación"></a>Activación</h4>
-<div class="paragraph">
-<p>Firestore Database debe estar activado con las siguientes configuraciones:</p>
-</div>
+<h4 id="configuración"><a class="anchor" href="#configuración"></a>Configuración</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -234,6 +200,12 @@ service cloud.firestore {
 }</code></pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="hosting"><a class="anchor" href="#hosting"></a>Hosting</h3>
+<div class="paragraph">
+<p>Establecer a <em>"3"</em> la opción <em>"Configuración de almacenamiento de actualizaciones"</em> en el historial de actualizaciones del dominio.</p>
 </div>
 </div>
 </div>

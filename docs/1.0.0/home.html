@@ -6,7 +6,7 @@
     <title>Untitled :: JF Team</title>
     <link rel="canonical" href="https://example.org/docs/docs/1.0.0/home.html">
     <link rel="prev" href="index.html">
-    <link rel="next" href="doc-jeferro/development.html">
+    <link rel="next" href="development/spa.html">
     <meta name="generator" content="Antora 3.0.2">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -36,6 +36,15 @@
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="home.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="development/spa.html">SPA</a>
   </li>
 </ul>
   </li>
@@ -72,6 +81,93 @@
 <article class="doc">
 <div class="paragraph">
 <p>Welcome to the JF Team 👋</p>
+</div>
+<div class="sect1">
+<h2 id="development"><a class="anchor" href="#development"></a>Development</h2>
+<div class="sectionbody">
+    <style>
+      .grid-development-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px;
+        margin-top: 16px;
+      }
+
+      .grid-development-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 16px;
+        background: #f3f2f2;
+        width: 100%;
+        min-height: 150px;
+        max-height: 150px;
+        padding: 0px;
+      }
+
+      @media screen and (max-width: 769px) {
+        .grid-development-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+      @media screen and (min-width: 780px) and (max-width: 1279px) {
+        .grid-development-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media screen and (min-width: 1280px) {
+        .grid-development-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .grid-development-item > div {
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0px 0px 8px black;
+        color: #FFF;
+        padding: 16px;
+      }
+
+      .no-image {
+        text-shadow: none;
+        color: #000;
+      }
+
+      .grid-development-item > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    </style>
+
+    <div id="grid-development" class="grid-development-grid">
+
+      <div class="grid-development-item">
+        <div>
+          <div class="grid-item-title no-image">
+            <a href="development/spa.html">SPA</a>
+          </div>
+          <div class="grid-item-description no-image">Documentación sobre SPA (React)</div>
+        </div>
+
+      </div>
+
+    </div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="doc-jeferro"><a class="anchor" href="#doc-jeferro"></a>DOC Jeferro</h2>
@@ -259,7 +355,7 @@
 </div>
 <nav class="pagination">
   <span class="prev"><a href="index.html">Documentation</a></span>
-  <span class="next"><a href="doc-jeferro/development.html">Development</a></span>
+  <span class="next"><a href="development/spa.html">SPA</a></span>
 </nav>
 </article>
   </div>
