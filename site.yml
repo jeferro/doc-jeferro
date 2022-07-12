@@ -1,0 +1,22 @@
+site:
+  title: JF Documentation
+  url: https://example.org/docs
+  start_page: docs:ROOT:index.adoc
+
+content:
+  sources:
+    - url: .
+      start_path: docs
+
+asciidoc:
+  attributes:
+    experimental: ''
+    idprefix: ''
+    idseparator: '-'
+    page-pagination: ''
+  extensions:
+    - ./extensions/asciidoc-extension-grid.js
+ui:
+  bundle:
+    url: ./ui-bundle
+    snapshot: true

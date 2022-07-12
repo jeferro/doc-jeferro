@@ -1,0 +1,6 @@
+name: docs
+title: Documentation
+version: 1.0.0
+nav:
+- modules/ROOT/nav.adoc
+- modules/wallet/nav.adoc

@@ -1,0 +1,140 @@
+
+= Firebase
+
+La aplicación utiliza un proyecto de Firebase para almacenar su información. Dicho proyecto tiene la siguiente configuración:
+
+
+
+== Autenticación
+
+La autenticación debe estar activada con las siguientes configuraciones:
+
+* modo: correo electrónico/contraseña
+
+
+
+== Hosting
+
+Firebase Hosting debe activarse en la consola de administración de Firebase y ejecutar el siguiente el comando "firebase init" si es el primer proyecto que se configura:
+
+[]
+----
+? Which Firebase features do you want to set up for this directory? 
+Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys 
+? Select a default Firebase project for this directory: <nombre proyecto>
+? Please select an option: 
+Use an existing project
+? What do you want to use as your public directory? build
+? Configure as a single-page app (rewrite all urls to /index.html)? y
+? Set up automatic builds and deploys with GitHub? n
+----
+
+Además, se debe modificar la propiedad "projects.default" como "project.development" en el archivo "code/.firebasesrc".
+
+Y por último, en el historial de actualizaciones del dominio, se debe pulsar la opción "Configuración de almacenamiento de actualizaciones" y establecer el valor "3".
+
+Si estamos configurando el proyecto de producción, debemos activar el hosting en la consola de Firebase y ejecutar el comando "firebase use --add":app-name:
+
+[]
+----
+? Which project do you want to add? <nombre_proyecto_firebase>
+? What alias do you want to use for this project? (e.g. staging) production
+----
+
+
+
+
+
+== App Distribution
+
+App Distribution debe estar activado. Por lo que deberemos configurar una aplicación Android en el proyecto.
+
+
+
+== Firestore Database
+
+=== Activación
+
+Firestore Database debe estar activado con las siguientes configuraciones:
+
+* modo: producción
+* ubicación: eur3 (europe-west)
+
+=== Índices
+
+[cols="1,1,1"]
+|===
+|Id colección |Campos indexados |Alcance de la consulta
+
+|summaries
+|userId: Ascendente, code: Descendente
+|Colección
+
+|operations
+|userId: Ascendente, date: Descendente
+|Colección
+
+|===
+
+
+=== Reglas
+
+[source,javascript]
+----
+rules_version = '2';
+service cloud.firestore {
+	// True if the user is authenticated
+  function isAuthenticated(){
+    return request.auth != null
+    	&& request.auth.uid != null;
+  }
+
+  // True if the user is authenticated and an administrator
+  function isAnAdmin(database){
+    return isAuthenticated()
+      && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+  }
+
+  // True if the user is authenticated user
+  function isTheUser(userId){
+    return isAuthenticated()
+      && (request.auth.uid == userId);
+  }
+  
+  // True if the new resource is owned by the authenticated user
+  function isOwnedNewResource(){
+  	return request.resource.data.userId == request.auth.uid;
+  }
+
+  // True if the resource is owned by the authenticated user or resource does not exist
+  function isOwnedResource(database){
+      return isAuthenticated()
+        && ((resource == null) || (resource.data.userId == request.auth.uid));
+  }
+    
+    
+
+  // COLLECTIONS
+  match /databases/{database}/documents {
+    
+    // --- Users
+    match /users/{userId} {      
+      allow create, read, update: if isTheUser(userId);
+      
+      allow delete: if false;
+    }
+    
+    // --- Operations
+    match /operations/{operationId} {
+      allow create: if isOwnedNewResource();
+    	allow read, update, delete: if isOwnedResource(database);
+    }
+    
+    // --- Summaries
+    match /summaries/{summaryId} {
+      allow create: if isOwnedNewResource();
+    	allow read, update, delete: if isOwnedResource(database);
+    }
+  }
+}
+----
