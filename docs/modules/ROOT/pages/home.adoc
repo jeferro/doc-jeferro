@@ -2,10 +2,18 @@
 Welcome to the JF Team 👋
 
 
+== Development
+
+[grid, 2, "development"]
+include::ROOT:partial$development.json[]
+
+
+
 == DOC Jeferro
 
 [grid, 2, "doc-jeferro"]
 include::ROOT:partial$doc-jeferro.json[]
+
 
 
 == SPA Wallet

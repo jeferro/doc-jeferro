@@ -2,61 +2,25 @@
 = Deployment
 
 == Firebase
+Como primer paso, después de crear un nuevo proyecto en Firebase, debemos registrar una nueva aplicación Javascript en en proyecto para obtener los datos de configuración de la conexión de la SPA a Firebase.
+
+Y a continuación, activar los siguientes módulos:
 
 
 
 === Autenticación
 
-La autenticación debe estar activada con las siguientes configuraciones:
-
-* modo: correo electrónico/contraseña
-
-
-
-=== Hosting
-
-Firebase Hosting debe activarse en la consola de administración de Firebase y ejecutar el siguiente el comando "firebase init" si es el primer proyecto que se configura:
-
-[]
-----
-? Which Firebase features do you want to set up for this directory? 
-Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys 
-? Select a default Firebase project for this directory: <nombre proyecto>
-? Please select an option: 
-Use an existing project
-? What do you want to use as your public directory? build
-? Configure as a single-page app (rewrite all urls to /index.html)? y
-? Set up automatic builds and deploys with GitHub? n
-----
-
-Además, se debe modificar la propiedad "projects.default" como "project.development" en el archivo "code/.firebasesrc".
-
-Y por último, en el historial de actualizaciones del dominio, se debe pulsar la opción "Configuración de almacenamiento de actualizaciones" y establecer el valor "3".
-
-Si estamos configurando el proyecto de producción, debemos activar el hosting en la consola de Firebase y ejecutar el comando "firebase use --add":app-name:
-
-[]
-----
-? Which project do you want to add? <nombre_proyecto_firebase>
-? What alias do you want to use for this project? (e.g. staging) production
-----
-
-
-
-=== App Distribution
-
-App Distribution debe estar activado. Por lo que deberemos configurar una aplicación Android en el proyecto.
+Activar la autenticación tipo _"correo electrónico/contraseña"_.
 
 
 
 === Firestore Database
 
-==== Activación
-
-Firestore Database debe estar activado con las siguientes configuraciones:
+==== Configuración
 
 * modo: producción
 * ubicación: eur3 (europe-west)
+
 
 ==== Índices
 
@@ -71,7 +35,6 @@ Firestore Database debe estar activado con las siguientes configuraciones:
 |operations
 |userId: Ascendente, date: Descendente
 |Colección
-
 |===
 
 
@@ -136,3 +99,9 @@ service cloud.firestore {
   }
 }
 ----
+
+
+
+=== Hosting
+
+Establecer a _"3"_ la opción _"Configuración de almacenamiento de actualizaciones"_ en el historial de actualizaciones del dominio.
