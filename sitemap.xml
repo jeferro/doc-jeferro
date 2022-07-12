@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://example.org/docs/docs/1.0.0/index.html</loc>
-<lastmod>2022-07-12T13:19:12.466Z</lastmod>
+<loc>https://example.org/docs/docs/1.0.0/doc-jeferro/development.html</loc>
+<lastmod>2022-07-12T13:20:00.922Z</lastmod>
 </url>
 <url>
-<loc>https://example.org/docs/docs/1.0.0/wallet/firebase.html</loc>
-<lastmod>2022-07-12T13:19:12.466Z</lastmod>
+<loc>https://example.org/docs/docs/1.0.0/home.html</loc>
+<lastmod>2022-07-12T13:20:00.922Z</lastmod>
 </url>
 <url>
-<loc>https://example.org/docs/docs/1.0.0/wallet/index.html</loc>
-<lastmod>2022-07-12T13:19:12.466Z</lastmod>
+<loc>https://example.org/docs/docs/1.0.0/spa-wallet/deployment.html</loc>
+<lastmod>2022-07-12T13:20:00.922Z</lastmod>
+</url>
+<url>
+<loc>https://example.org/docs/docs/1.0.0/spa-wallet/getting-started.html</loc>
+<lastmod>2022-07-12T13:20:00.922Z</lastmod>
 </url>
 </urlset>

@@ -378,7 +378,8 @@ html.is-clipped--nav {
 }
 
 .is-current-page > .nav-link, .is-current-page > .nav-text {
-    font-weight: 500
+    font-weight: 500;
+    color: #b38282;
 }
 
 .nav-panel-explore {
