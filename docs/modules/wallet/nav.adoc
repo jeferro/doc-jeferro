@@ -1,3 +1,0 @@
-.Wallet
-* xref:index.adoc[Getting started]
-* xref:firebase.adoc[Firebase]

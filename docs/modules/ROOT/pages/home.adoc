@@ -1,0 +1,14 @@
+
+Welcome to the JF Team 👋
+
+
+== DOC Jeferro
+
+[grid, 2, "doc-jeferro"]
+include::ROOT:partial$doc-jeferro.json[]
+
+
+== SPA Wallet
+
+[grid, 2, "spa-wallet-grid"]
+include::ROOT:partial$spa-wallet.json[]

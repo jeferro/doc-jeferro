@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Getting started",
+    "to": "spa-wallet/getting-started.html",
+    "subtitle": "Documentación general",
+    "img": ""
+  },
+  {
+    "title": "Deployment",
+    "to": "spa-wallet/deployment.html",
+    "subtitle": "Despliegue",
+    "img": ""
+  }
+]
