@@ -3,6 +3,7 @@ name: Firebase Hosting - deploy
 
 on:
   push:
+    branches: [ "master" ]
 
 env:
   NODE_VERSION: 16.x
