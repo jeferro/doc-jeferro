@@ -1,0 +1,31 @@
+
+name: Firebase Hosting - deploy
+
+on:
+  push:
+
+env:
+  NODE_VERSION: 16.x
+  BUILD_ARTIFACT_NAME: doc-build
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Build Documentation
+        run: npx --yes antora site.yml
+
+      - name: Upload building artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.BUILD_ARTIFACT_NAME }}
+          path: build
