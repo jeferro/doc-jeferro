@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Firebase :: JF Documentation</title>
+    <link rel="canonical" href="https://example.org/docs/docs/1.0.0/wallet/firebase.html">
+    <link rel="prev" href="index.html">
+    <meta name="generator" content="Antora 3.0.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://example.org/docs">JF Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="1.0.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Wallet</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Getting started</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="firebase.html">Firebase</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<button class="nav-toggle"></button>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Firebase</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>La aplicación utiliza un proyecto de Firebase para almacenar su información. Dicho proyecto tiene la siguiente configuración:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="autenticación"><a class="anchor" href="#autenticación"></a>Autenticación</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La autenticación debe estar activada con las siguientes configuraciones:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>modo: correo electrónico/contraseña</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hosting"><a class="anchor" href="#hosting"></a>Hosting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Firebase Hosting debe activarse en la consola de administración de Firebase y ejecutar el siguiente el comando "firebase init" si es el primer proyecto que se configura:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>? Which Firebase features do you want to set up for this directory?
+Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+? Select a default Firebase project for this directory: &lt;nombre proyecto&gt;
+? Please select an option:
+Use an existing project
+? What do you want to use as your public directory? build
+? Configure as a single-page app (rewrite all urls to /index.html)? y
+? Set up automatic builds and deploys with GitHub? n</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Además, se debe modificar la propiedad "projects.default" como "project.development" en el archivo "code/.firebasesrc".</p>
+</div>
+<div class="paragraph">
+<p>Y por último, en el historial de actualizaciones del dominio, se debe pulsar la opción "Configuración de almacenamiento de actualizaciones" y establecer el valor "3".</p>
+</div>
+<div class="paragraph">
+<p>Si estamos configurando el proyecto de producción, debemos activar el hosting en la consola de Firebase y ejecutar el comando "firebase use --add":app-name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>? Which project do you want to add? &lt;nombre_proyecto_firebase&gt;
+? What alias do you want to use for this project? (e.g. staging) production</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="app-distribution"><a class="anchor" href="#app-distribution"></a>App Distribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>App Distribution debe estar activado. Por lo que deberemos configurar una aplicación Android en el proyecto.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="firestore-database"><a class="anchor" href="#firestore-database"></a>Firestore Database</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="activación"><a class="anchor" href="#activación"></a>Activación</h3>
+<div class="paragraph">
+<p>Firestore Database debe estar activado con las siguientes configuraciones:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>modo: producción</p>
+</li>
+<li>
+<p>ubicación: eur3 (europe-west)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="índices"><a class="anchor" href="#índices"></a>Índices</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Id colección</th>
+<th class="tableblock halign-left valign-top">Campos indexados</th>
+<th class="tableblock halign-left valign-top">Alcance de la consulta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">summaries</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userId: Ascendente, code: Descendente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Colección</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userId: Ascendente, date: Descendente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Colección</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="reglas"><a class="anchor" href="#reglas"></a>Reglas</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">rules_version = '2';
+service cloud.firestore {
+	// True if the user is authenticated
+  function isAuthenticated(){
+    return request.auth != null
+    	&amp;&amp; request.auth.uid != null;
+  }
+
+  // True if the user is authenticated and an administrator
+  function isAnAdmin(database){
+    return isAuthenticated()
+      &amp;&amp; get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+  }
+
+  // True if the user is authenticated user
+  function isTheUser(userId){
+    return isAuthenticated()
+      &amp;&amp; (request.auth.uid == userId);
+  }
+
+  // True if the new resource is owned by the authenticated user
+  function isOwnedNewResource(){
+  	return request.resource.data.userId == request.auth.uid;
+  }
+
+  // True if the resource is owned by the authenticated user or resource does not exist
+  function isOwnedResource(database){
+      return isAuthenticated()
+        &amp;&amp; ((resource == null) || (resource.data.userId == request.auth.uid));
+  }
+
+
+
+  // COLLECTIONS
+  match /databases/{database}/documents {
+
+    // --- Users
+    match /users/{userId} {
+      allow create, read, update: if isTheUser(userId);
+
+      allow delete: if false;
+    }
+
+    // --- Operations
+    match /operations/{operationId} {
+      allow create: if isOwnedNewResource();
+    	allow read, update, delete: if isOwnedResource(database);
+    }
+
+    // --- Summaries
+    match /summaries/{summaryId} {
+      allow create: if isOwnedNewResource();
+    	allow read, update, delete: if isOwnedResource(database);
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Getting started</a></span>
+</nav>
+</article>
+  </div>
+</main>
+<aside class="toc sidebar" data-title="ON THIS PAGE" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
