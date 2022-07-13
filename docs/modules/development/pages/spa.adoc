@@ -3,7 +3,7 @@
 
 == Firebase Hosting
 
-IMPORTANT: Antes de realizar esta configuración, el proyecto Firebase debe estar correctamente creado y configurado.
+NOTE: Antes de realizar esta configuración, el proyecto Firebase debe estar correctamente creado y configurado.
 
 === Development
 

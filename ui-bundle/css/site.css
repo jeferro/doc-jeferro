@@ -1173,6 +1173,18 @@ a + .breadcrumbs {
     word-wrap: anywhere
 }
 
+.doc .admonitionblock.note td.content {
+    background: #217ee752;
+}
+
+.doc .admonitionblock.tip td.content {
+    background: #41af4659;
+}
+
+.doc .admonitionblock.important td.content {
+    background: #d32f2f45;
+}
+
 .doc .admonitionblock .icon {
     position: absolute;
     top: 0;

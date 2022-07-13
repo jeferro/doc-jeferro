@@ -2,9 +2,8 @@
 = Deployment
 
 == Firebase
-Como primer paso, después de crear un nuevo proyecto en Firebase, debemos registrar una nueva aplicación Javascript en en proyecto para obtener los datos de configuración de la conexión de la SPA a Firebase.
 
-Y a continuación, activar los siguientes módulos:
+IMPORTANT: Antes de activar los siguientes módulos, debemos crear un nuevo proyecto en la consola de Firebase y registrar una aplicación Javascript, para usar dicha configuración en la applicación
 
 
 

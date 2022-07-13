@@ -3,3 +3,27 @@
 
 Gestione sus gastos e ingresos facilmente
 
+
+
+== Diagrama de Integración
+
+image::integration-diagram.jpg[width=381px]
+
+
+
+== Entornos
+
+=== DES
+
+NOTE: Se autodespliegue en este entorno el código de la rama _develop_
+
+* SPA: https://wallet.dev.jeferro.com
+* Consola Firebase: https://console.firebase.google.com/project/jf-wallet-dev/overview
+
+=== PRO
+
+NOTE: Se autodespliegue en este entorno el código de la rama _master_
+
+
+* SPA: https://wallet.jeferro.com
+* Consola Firebase: https://console.firebase.google.com/project/jf-wallet/overview
