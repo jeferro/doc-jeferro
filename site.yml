@@ -1,6 +1,6 @@
 site:
   title: JF Team
-  url: https://example.org/docs
+  url: https://jeferro.github.io/doc-jeferro/
   start_page: docs:ROOT:home.adoc
 
 content:

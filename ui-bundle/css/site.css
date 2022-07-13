@@ -248,7 +248,8 @@ object[type="image/svg+xml"]:not([width]) {
 .nav {
     background: #fafafa;
     position: relative;
-    top: 2.5rem;
+    top: 0;
+    bottom: 0;
     height: calc(100vh - 6rem)
 }
 
@@ -1916,7 +1917,8 @@ body {
     -webkit-box-flex: 1;
     -ms-flex: auto;
     flex: auto;
-    padding-left: 1rem
+    padding-left: 1rem;
+    align-items: center;
 }
 
 .navbar-brand .navbar-item {
@@ -1988,7 +1990,7 @@ body {
     color: #4c4c4c
 }
 
-.navbar-burger {
+.nav-toggle {
     background: none;
     border: none;
     outline: none;
@@ -2009,41 +2011,40 @@ body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin-left: auto;
     min-width: 0
 }
 
-.navbar-burger span {
+.nav-toggle span {
     background-color: #fff;
     height: 1.5px;
     width: 1rem
 }
 
-.navbar-burger:not(.is-active) span {
+.nav-toggle:not(.is-active) span {
     -webkit-transition: opacity 0s .25s, margin-top .25s ease-out .25s, -webkit-transform .25s ease-out;
     transition: opacity 0s .25s, margin-top .25s ease-out .25s, -webkit-transform .25s ease-out;
     transition: transform .25s ease-out, opacity 0s .25s, margin-top .25s ease-out .25s;
     transition: transform .25s ease-out, opacity 0s .25s, margin-top .25s ease-out .25s, -webkit-transform .25s ease-out
 }
 
-.navbar-burger span + span {
+.nav-toggle span + span {
     margin-top: .25rem
 }
 
-.navbar-burger.is-active span + span {
+.nav-toggle.is-active span + span {
     margin-top: -1.5px
 }
 
-.navbar-burger.is-active span:first-child {
+.nav-toggle.is-active span:first-child {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg)
 }
 
-.navbar-burger.is-active span:nth-child(2) {
+.nav-toggle.is-active span:nth-child(2) {
     opacity: 0
 }
 
-.navbar-burger.is-active span:nth-child(3) {
+.nav-toggle.is-active span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg)
 }
@@ -2151,7 +2152,7 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-    .navbar-burger {
+    .nav-toggle {
         display: none
     }
 

@@ -1,6 +1,12 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
+        <button class="nav-toggle" data-target="topbar-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
       <a class="navbar-item" href="{{{or site.url siteRootPath}}}">{{site.title}}</a>
       {{#if env.SITE_SEARCH_PROVIDER}}
       <div class="navbar-item search hide-for-print">
@@ -9,11 +15,6 @@
         </div>
       </div>
       {{/if}}
-      <button class="navbar-burger" data-target="topbar-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </nav>
 </header>
