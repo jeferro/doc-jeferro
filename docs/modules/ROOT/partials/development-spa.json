@@ -1,8 +1,8 @@
 [
   {
-    "title": "Firebase",
-    "to": "development/spa-firebase.html",
-    "subtitle": "Configuración y uso de Firebase en SPA's",
+    "title": "SPA",
+    "to": "development/spa.html",
+    "subtitle": "Single Page Application",
     "img": ""
   }
 ]

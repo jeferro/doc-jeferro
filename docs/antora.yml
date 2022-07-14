@@ -4,5 +4,5 @@ version: 1.0.0
 nav:
 - modules/ROOT/nav.adoc
 - modules/development/nav.adoc
+- modules/wallet/nav.adoc
 - modules/doc-jeferro/nav.adoc
-- modules/spa-wallet/nav.adoc

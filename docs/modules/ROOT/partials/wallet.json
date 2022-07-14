@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Getting started",
+    "to": "wallet/getting-started.html",
+    "subtitle": "Documentación inicial",
+    "img": ""
+  },
+  {
+    "title": "SPA",
+    "to": "wallet/spa.html",
+    "subtitle": "Single Page Application",
+    "img": ""
+  }
+]

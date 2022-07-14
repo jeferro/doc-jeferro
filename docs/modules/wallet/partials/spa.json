@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Development",
+    "to": "spa-development.html",
+    "subtitle": "Documentación de desarrollo",
+    "img": ""
+  },
+  {
+    "title": "Deployment",
+    "to": "spa-deployment.html",
+    "subtitle": "Configuración de entornos",
+    "img": ""
+  }
+]

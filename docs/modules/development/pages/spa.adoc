@@ -1,0 +1,5 @@
+
+= SPA
+
+[grid, 2, "spa-grid"]
+include::development:partial$spa.json[]

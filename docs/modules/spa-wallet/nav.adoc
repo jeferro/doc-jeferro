@@ -1,4 +1,0 @@
-.SPA Wallet
-* xref:getting-started.adoc[Getting started]
-* xref:development.adoc[Development]
-* xref:deployment.adoc[Deployment]
