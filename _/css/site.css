@@ -362,10 +362,10 @@ html.is-clipped--nav {
     line-height: inherit;
     padding: 0;
     position: absolute;
+    right: 8px;
     height: 1.35em;
     width: 1.35em;
     margin-top: -.05em;
-    margin-left: 80%;
     transform: rotate(90deg);
 }
 
@@ -517,10 +517,6 @@ aside.toc.sidebar {
 }
 
 @media screen and (max-width: 1023.5px) {
-    aside.toc.sidebar {
-        display: none
-    }
-
     main > .content {
         overflow-x: auto
     }
@@ -531,13 +527,16 @@ aside.toc.sidebar {
         -webkit-box-flex: 1;
         -ms-flex: auto;
         flex: auto;
-        min-width: 0
+        min-width: 0;
+        display: flex;
+        align-items: stretch;
     }
 
     main > .content {
         display: -webkit-box;
         display: -ms-flexbox;
-        display: flex
+        display: flex;
+        width: 100%;
     }
 
     aside.toc.embedded {
