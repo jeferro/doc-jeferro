@@ -4,7 +4,7 @@
   "description": "JF Team documentation",
   "scripts": {
     "build": "antora site.yml",
-    "debug": "live-server build/site --port=5000 & run-when-changed --watch 'docs/**' --watch 'ui-bundle/**' --watch 'extensions/**' --watch 'site.yml' --exec 'npm run build'"
+    "start": "live-server build/site --port=5000 & run-when-changed --watch 'docs/**' --watch 'ui-bundle/**' --watch 'extensions/**' --watch 'site.yml' --exec 'npm run build'"
   },
   "devDependencies": {
     "antora": "^3.0.2",

@@ -1,0 +1,31 @@
+
+= Development
+
+
+
+== Repository
+
+https://github.com/jeferro/spa-wallet
+
+
+
+== Instalación en local
+
+Como primer paso debemos instalar las librerias necesarias:
+
+[source,bash]
+----
+cd code
+npm install
+----
+
+
+
+== Desarrollo en local
+
+El proyecto está preparado para autogenerarse en local con cualquier cambio que se realice:
+
+[source,bash]
+----
+npm run start
+----

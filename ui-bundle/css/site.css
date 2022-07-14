@@ -527,13 +527,16 @@ aside.toc.sidebar {
         -webkit-box-flex: 1;
         -ms-flex: auto;
         flex: auto;
-        min-width: 0
+        min-width: 0;
+        display: flex;
+        align-items: stretch;
     }
 
     main > .content {
         display: -webkit-box;
         display: -ms-flexbox;
-        display: flex
+        display: flex;
+        width: 100%;
     }
 
     aside.toc.embedded {

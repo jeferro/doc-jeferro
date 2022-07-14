@@ -6,6 +6,12 @@
     "img": ""
   },
   {
+    "title": "Development",
+    "to": "spa-wallet/development.html",
+    "subtitle": "Documentación de desarrollo",
+    "img": ""
+  },
+  {
     "title": "Deployment",
     "to": "spa-wallet/deployment.html",
     "subtitle": "Configuración de entornos",
