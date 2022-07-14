@@ -16,6 +16,7 @@ asciidoc:
     page-pagination: ''
   extensions:
     - ./extensions/asciidoc-extension-grid.js
+
 ui:
   bundle:
     url: ./ui-bundle
