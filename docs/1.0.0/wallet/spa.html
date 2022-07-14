@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+            SPA ::
+
+            JF Team
+    </title>
+    <link rel="canonical" href="https://jeferro.github.io/doc-jeferro/docs/1.0.0/wallet/spa.html">
+    <link rel="prev" href="getting-started.html">
+    <link rel="next" href="spa-development.html">
+    <meta name="generator" content="Antora 3.0.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+        <button class="nav-toggle" data-target="topbar-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+      <a class="navbar-item" href="https://jeferro.github.io/doc-jeferro">JF Team</a>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="1.0.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../home.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../development/spa.html">SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/spa-firebase.html">Firebase</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Wallet</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="getting-started.html">Getting started</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="spa.html">SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="spa-development.html">Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="spa-deployment.html">Deployment</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">[DOC] Jeferro</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../doc-jeferro/getting-started.html">Getting started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../doc-jeferro/development.html">Development</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+  <div class="content">
+<aside class="toc sidebar" data-title="ON THIS PAGE" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">SPA</h1>
+    <style>
+      .grid-spa-grid-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px;
+        margin-top: 16px;
+      }
+
+      .grid-spa-grid-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 16px;
+        background: #f3f2f2;
+        width: 100%;
+        min-height: 150px;
+        max-height: 150px;
+        padding: 0px;
+      }
+
+      @media screen and (max-width: 769px) {
+        .grid-spa-grid-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+      @media screen and (min-width: 780px) and (max-width: 1279px) {
+        .grid-spa-grid-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media screen and (min-width: 1280px) {
+        .grid-spa-grid-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .grid-spa-grid-item > div {
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0px 0px 8px black;
+        color: #FFF;
+        padding: 16px;
+      }
+
+      .no-image {
+        text-shadow: none;
+        color: #000;
+      }
+
+      .grid-spa-grid-item > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    </style>
+
+    <div id="grid-spa-grid" class="grid-spa-grid-grid">
+
+      <div class="grid-spa-grid-item">
+        <div>
+          <div class="grid-item-title no-image">
+            <a href="spa-development.html">Development</a>
+          </div>
+          <div class="grid-item-description no-image">Documentación de desarrollo</div>
+        </div>
+
+      </div>
+
+      <div class="grid-spa-grid-item">
+        <div>
+          <div class="grid-item-title no-image">
+            <a href="spa-deployment.html">Deployment</a>
+          </div>
+          <div class="grid-item-description no-image">Configuración de entornos</div>
+        </div>
+
+      </div>
+
+    </div>
+<nav class="pagination">
+  <span class="prev"><a href="getting-started.html">Getting started</a></span>
+  <span class="next"><a href="spa-development.html">Development</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
