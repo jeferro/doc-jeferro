@@ -21,7 +21,7 @@ npm install
 
 
 
-== Desarrollo en local
+== Ejecución en local
 
 El proyecto está preparado para autogenerarse en local con cualquier cambio que se realice:
 

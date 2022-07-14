@@ -27,7 +27,7 @@ npm run build
 
 
 
-== Desarrollo en local
+== Ejecución en local
 
 La documentación está preparada para autogenerarse en local con cualquier cambio que se realice:
 
