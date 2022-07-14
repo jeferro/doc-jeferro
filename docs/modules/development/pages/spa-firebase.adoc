@@ -1,0 +1,100 @@
+
+= Firebase
+
+
+
+== Hosting
+
+
+
+=== Configuración
+
+==== Development
+
+Al ser la primera vez que se configura el hosting en la aplicación, se debe crear un directorio para el packaging:
+
+[source,bash]
+----
+mkdir -p packaging/firebase
+----
+
+Y a continuación configurar Firebase en dicho packaging:
+
+[source,bash]
+----
+cd packaging/firebase
+
+firebase init
+----
+
+Respondiendo a las siguiente preguntas
+
+[cols="1,1"]
+|===
+| Question
+| Answer
+
+| ? Which Firebase features do you want to set up for this directory?
+| Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+
+| ? Select a default Firebase project for this directory:
+| <nombre proyecto>
+
+| ? Please select an option:
+| Use an existing project
+
+| ? What do you want to use as your public directory?
+| public
+
+| ? Configure as a single-page app (rewrite all urls to /index.html)?
+| y
+
+| ? Set up automatic builds and deploys with GitHub?
+| n
+|===
+
+Y por último, modificar el archivo _".firebasesrc"_ generado, actualizando la propiedad "projects.default" a "project.development".
+
+
+
+==== Production
+
+Como el proyecto ya se configuró para desarrollo, se debe añadir la configuración de produción unicamente:
+
+[source,bash]
+----
+firebase use --add
+----
+
+Respondiendo a las siguientes preguntas:
+
+[cols="1,1"]
+|===
+| Question
+| Answer
+
+| ? Which project do you want to add?
+| <nombre_proyecto_firebase>
+
+| ? What alias do you want to use for this project?
+| (e.g. staging) production
+|===
+
+
+
+=== Despliegue desde local
+
+Previamente al despliegue, debemos haber generado los ficheros a desplegar y copiarlo en el directorio _"packaging/firebase/public"_.
+
+Para a continuación, desplegar la aplicación en Firebase Hosting:
+
+[source,bash]
+----
+cd packaging/firebase
+
+firebase deploy -P <env>
+----
+
+Donde:
+
+* *env:* es el identificador del environment a desplegar, existente en el fichero "packaging/firebase/.firebaserc"
