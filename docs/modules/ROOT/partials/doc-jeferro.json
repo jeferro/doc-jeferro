@@ -1,8 +1,14 @@
 [
   {
+    "title": "Getting started",
+    "to": "doc-jeferro/getting-started.html",
+    "subtitle": "Documentación inicial",
+    "img": ""
+  },
+  {
     "title": "Development",
     "to": "doc-jeferro/development.html",
-    "subtitle": "Instalación en local y documentación de desarrollo",
+    "subtitle": "Documentación para desarrollo",
     "img": ""
   }
 ]

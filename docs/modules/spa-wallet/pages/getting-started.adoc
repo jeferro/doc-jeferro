@@ -1,7 +1,9 @@
 
 = Getting started
 
-Gestione sus gastos e ingresos facilmente
+== Introducción
+
+Sistema para el control de la economia de una persona. Permite registrar límite en las diferentes categorias existentes, registrar gastos o ingresos en dichas categorias y obtener información de estado de los gastos en el mes actual o histórico.
 
 
 
@@ -23,7 +25,6 @@ NOTE: Se autodespliegue en este entorno el código de la rama _develop_
 === PRO
 
 NOTE: Se autodespliegue en este entorno el código de la rama _master_
-
 
 * SPA: https://wallet.jeferro.com
 * Consola Firebase: https://console.firebase.google.com/project/jf-wallet/overview

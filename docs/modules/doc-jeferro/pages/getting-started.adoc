@@ -1,0 +1,16 @@
+
+= Getting started
+
+== Introducción
+
+Encapsula la documentación del equipo JF Team.
+
+
+
+== Entornos
+
+=== PRO
+
+NOTE: Se autodespliegue en este entorno el código de la rama _master_
+
+* URL: https://jeferro.github.io/doc-jeferro/
