@@ -1,0 +1,26 @@
+
+= Configuración
+
+== GitHub
+
+=== Tags
+
+En la sección "Issues -> Labels" se deben dejar unicamente los siguientes tags definidos:
+
+[cols="1,1"]
+|===
+| Label name
+| Color
+
+| hotfix
+| #d73a4a
+
+| feature
+| #0E8A16
+
+| bugfix
+| #FE5CE6
+|===
+
+
+

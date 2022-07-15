@@ -6,9 +6,21 @@
     "img": ""
   },
   {
-    "title": "SPA",
-    "to": "wallet/spa.html",
-    "subtitle": "Single Page Application",
+    "title": "Deployment",
+    "to": "wallet/deployment.html",
+    "subtitle": "",
+    "img": ""
+  },
+  {
+    "title": "Ci/CD",
+    "to": "wallet/ci-cd.html",
+    "subtitle": "",
+    "img": ""
+  },
+  {
+    "title": "Desarrollo",
+    "to": "wallet/development.html",
+    "subtitle": "",
     "img": ""
   }
 ]

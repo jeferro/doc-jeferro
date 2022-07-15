@@ -1,0 +1,178 @@
+
+= Deployment
+
+
+
+== Firebase
+
+Todas estas operaciones se tiene que realizar en la consola de administración de Firebase, para dos nuevos proyectos a crear. Uno para el entorno de *desarrollo* y otro para *producción*.
+
+
+=== Autenticación
+
+Activar la autenticación tipo _"correo electrónico/contraseña"_.
+
+
+
+=== Firestore Database
+
+En primer lugar, debemos crear la base de datos con la siguiente configuración:
+
+* modo: producción
+* ubicación: eur3 (europe-west)
+
+
+A continuación, crear los índices usados:
+
+[cols="1,1,1"]
+|===
+|Id colección |Campos indexados |Alcance de la consulta
+
+|summaries
+|userId: Ascendente, code: Descendente
+|Colección
+
+|operations
+|userId: Ascendente, date: Descendente
+|Colección
+|===
+
+
+Y configurar las reglas de acceso a la información:
+
+[source,javascript]
+----
+rules_version = '2';
+service cloud.firestore {
+	// True if the user is authenticated
+  function isAuthenticated(){
+    return request.auth != null
+    	&& request.auth.uid != null;
+  }
+
+  // True if the user is authenticated and an administrator
+  function isAnAdmin(database){
+    return isAuthenticated()
+      && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+  }
+
+  // True if the user is authenticated user
+  function isTheUser(userId){
+    return isAuthenticated()
+      && (request.auth.uid == userId);
+  }
+
+  // True if the new resource is owned by the authenticated user
+  function isOwnedNewResource(){
+  	return request.resource.data.userId == request.auth.uid;
+  }
+
+  // True if the resource is owned by the authenticated user or resource does not exist
+  function isOwnedResource(database){
+      return isAuthenticated()
+        && ((resource == null) || (resource.data.userId == request.auth.uid));
+  }
+
+
+
+  // COLLECTIONS
+  match /databases/{database}/documents {
+
+    // --- Users
+    match /users/{userId} {
+      allow create, read, update: if isTheUser(userId);
+
+      allow delete: if false;
+    }
+
+    // --- Operations
+    match /operations/{operationId} {
+      allow create: if isOwnedNewResource();
+    	allow read, update, delete: if isOwnedResource(database);
+    }
+
+    // --- Summaries
+    match /summaries/{summaryId} {
+      allow create: if isOwnedNewResource();
+    	allow read, update, delete: if isOwnedResource(database);
+    }
+  }
+}
+----
+
+
+
+=== Hosting
+
+Activar el hosting del proyecto y establecer a _"3"_ la opción _"Configuración de almacenamiento de actualizaciones"_ en el historial de actualizaciones del dominio.
+
+
+
+== Packagings
+
+=== Firebase
+
+Al ser la primera vez que se configura el hosting en la aplicación, se debe crear un directorio para el packaging:
+
+[source,bash]
+----
+mkdir -p packaging/firebase
+----
+
+Y a continuación configurar Firebase en dicho packaging:
+
+[source,bash]
+----
+cd packaging/firebase
+
+firebase init
+----
+
+Respondiendo a las siguiente preguntas
+
+[cols="1,1"]
+|===
+| Question
+| Answer
+
+| ? Which Firebase features do you want to set up for this directory?
+| Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+
+| ? Select a default Firebase project for this directory:
+| <nombre proyecto desarrollo>
+
+| ? Please select an option:
+| Use an existing project
+
+| ? What do you want to use as your public directory?
+| public
+
+| ? Configure as a single-page app (rewrite all urls to /index.html)?
+| y
+
+| ? Set up automatic builds and deploys with GitHub?
+| n
+|===
+
+Y por último, modificar el archivo _".firebasesrc"_ generado, actualizando la propiedad "projects.default" a "project.development".
+
+Además, debemos configurar el proyecto de producción mediante el comando:
+
+[source,bash]
+----
+firebase use --add
+----
+
+Respondiendo a las siguientes preguntas:
+
+[cols="1,1"]
+|===
+| Question
+| Answer
+
+| ? Which project do you want to add?
+| <nombre proyecto producción>
+
+| ? What alias do you want to use for this project?
+| (e.g. staging) production
+|===

@@ -1,5 +1,5 @@
 .Wallet
 * xref:getting-started.adoc[Getting started]
-* xref:spa.adoc[SPA]
-*** xref:spa-development.adoc[Development]
-*** xref:spa-deployment.adoc[Deployment]
+* xref:deployment.adoc[Deployment]
+* xref:ci-cd.adoc[CI/CD]
+* xref:development.adoc[Development]

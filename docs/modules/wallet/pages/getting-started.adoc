@@ -24,7 +24,5 @@ NOTE: Se autodespliegue en este entorno el código de la rama _develop_
 
 === PRO
 
-NOTE: Se autodespliegue en este entorno el código de la rama _master_
-
 * SPA: https://wallet.jeferro.com
 * Consola Firebase: https://console.firebase.google.com/project/jf-wallet/overview

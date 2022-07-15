@@ -1,5 +1,0 @@
-
-= SPA
-
-[grid, 2, "spa-grid"]
-include::wallet:partial$spa.json[]

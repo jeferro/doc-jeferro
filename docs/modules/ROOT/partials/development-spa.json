@@ -1,5 +1,11 @@
 [
   {
+    "title": "GitHub",
+    "to": "development/github.html",
+    "subtitle": "Configuración repositorio",
+    "img": ""
+  },
+  {
     "title": "SPA",
     "to": "development/spa.html",
     "subtitle": "Single Page Application",
