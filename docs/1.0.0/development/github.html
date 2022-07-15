@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>
-            Getting started ::
+            Configuración ::
 
             JF Team
     </title>
-    <link rel="canonical" href="https://jeferro.github.io/doc-jeferro/docs/1.0.0/wallet/getting-started.html">
-    <link rel="prev" href="../development/spa-firebase.html">
-    <link rel="next" href="deployment.html">
+    <link rel="canonical" href="https://jeferro.github.io/doc-jeferro/docs/1.0.0/development/github.html">
+    <link rel="prev" href="../home.html">
+    <link rel="next" href="spa.html">
     <meta name="generator" content="Antora 3.0.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -48,15 +48,15 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Development</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../development/github.html">GitHub</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="github.html">GitHub</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../development/spa.html">SPA</a>
+    <a class="nav-link" href="spa.html">SPA</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../development/spa-firebase.html">Firebase</a>
+    <a class="nav-link" href="spa-firebase.html">Firebase</a>
   </li>
 </ul>
   </li>
@@ -66,17 +66,17 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Wallet</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="getting-started.html">Getting started</a>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../wallet/getting-started.html">Getting started</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="deployment.html">Deployment</a>
+    <a class="nav-link" href="../wallet/deployment.html">Deployment</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="ci-cd.html">CI/CD</a>
+    <a class="nav-link" href="../wallet/ci-cd.html">CI/CD</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="development.html">Development</a>
+    <a class="nav-link" href="../wallet/development.html">Development</a>
   </li>
 </ul>
   </li>
@@ -104,71 +104,45 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Getting started</h1>
+<h1 class="page">Configuración</h1>
 <div class="sect1">
-<h2 id="introducción"><a class="anchor" href="#introducción"></a>Introducción</h2>
+<h2 id="github"><a class="anchor" href="#github"></a>GitHub</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="tags"><a class="anchor" href="#tags"></a>Tags</h3>
 <div class="paragraph">
-<p>Sistema para el control de la economia de una persona. Permite registrar límite en las diferentes categorias existentes, registrar gastos o ingresos en dichas categorias y obtener información de estado de los gastos en el mes actual o histórico.</p>
+<p>En la sección "Issues &#8594; Labels" se deben dejar unicamente los siguientes tags definidos:</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="diagrama-de-integración"><a class="anchor" href="#diagrama-de-integración"></a>Diagrama de Integración</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="_images/integration-diagram.jpg" alt="integration diagram" width="381px">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="entornos"><a class="anchor" href="#entornos"></a>Entornos</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="des"><a class="anchor" href="#des"></a>DES</h3>
-<div class="admonitionblock note">
-<table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Se autodespliegue en este entorno el código de la rama <em>develop</em>
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Color</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hotfix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#d73a4a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#0E8A16</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bugfix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#FE5CE6</p></td>
+</tr>
+</tbody>
 </table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>SPA: <a href="https://wallet.dev.jeferro.com" class="bare">https://wallet.dev.jeferro.com</a></p>
-</li>
-<li>
-<p>Consola Firebase: <a href="https://console.firebase.google.com/project/jf-wallet-dev/overview" class="bare">https://console.firebase.google.com/project/jf-wallet-dev/overview</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="pro"><a class="anchor" href="#pro"></a>PRO</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>SPA: <a href="https://wallet.jeferro.com" class="bare">https://wallet.jeferro.com</a></p>
-</li>
-<li>
-<p>Consola Firebase: <a href="https://console.firebase.google.com/project/jf-wallet/overview" class="bare">https://console.firebase.google.com/project/jf-wallet/overview</a></p>
-</li>
-</ul>
-</div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../development/spa-firebase.html">Firebase</a></span>
-  <span class="next"><a href="deployment.html">Deployment</a></span>
+  <span class="prev"><a href="../home.html">Home</a></span>
+  <span class="next"><a href="spa.html">SPA</a></span>
 </nav>
 </article>
   </div>

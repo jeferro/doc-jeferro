@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>
-            Development ::
+            CI/CD ::
 
             JF Team
     </title>
-    <link rel="canonical" href="https://jeferro.github.io/doc-jeferro/docs/1.0.0/wallet/spa-development.html">
-    <link rel="prev" href="spa.html">
-    <link rel="next" href="spa-deployment.html">
+    <link rel="canonical" href="https://jeferro.github.io/doc-jeferro/docs/1.0.0/wallet/ci-cd.html">
+    <link rel="prev" href="deployment.html">
+    <link rel="next" href="development.html">
     <meta name="generator" content="Antora 3.0.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -49,6 +49,9 @@
     <span class="nav-text">Development</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../development/github.html">GitHub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../development/spa.html">SPA</a>
 <ul class="nav-list">
@@ -67,16 +70,13 @@
     <a class="nav-link" href="getting-started.html">Getting started</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="spa.html">SPA</a>
-<ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="spa-development.html">Development</a>
+    <a class="nav-link" href="deployment.html">Deployment</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="spa-deployment.html">Deployment</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="ci-cd.html">CI/CD</a>
   </li>
-</ul>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="development.html">Development</a>
   </li>
 </ul>
   </li>
@@ -104,45 +104,95 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Development</h1>
+<h1 class="page">CI/CD</h1>
 <div class="sect1">
-<h2 id="repository"><a class="anchor" href="#repository"></a>Repository</h2>
+<h2 id="checks"><a class="anchor" href="#checks"></a>Checks</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="pr"><a class="anchor" href="#pr"></a>PR</h3>
 <div class="paragraph">
-<p><a href="https://github.com/jeferro/spa-wallet" class="bare">https://github.com/jeferro/spa-wallet</a></p>
+<p>Valida la información de la PR abierta:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Valida el título de la PR abierta</p>
+</li>
+<li>
+<p>Comprueba que la rama base es correcta</p>
+</li>
+<li>
+<p>Verifica que las etiquetas usadas son correctos</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code"><a class="anchor" href="#code"></a>Code</h3>
+<div class="paragraph">
+<p>Verifica el desarrollo realizado:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ejecuta los tests de la aplicación</p>
+</li>
+<li>
+<p>Compilación de la aplicación</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="instalación-en-local"><a class="anchor" href="#instalación-en-local"></a>Instalación en local</h2>
+<h2 id="actions"><a class="anchor" href="#actions"></a>Actions</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Como primer paso debemos instalar las librerias necesarias:</p>
+<div class="sect2">
+<h3 id="develop"><a class="anchor" href="#develop"></a>Develop</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Firebase</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Compilación para Firebase</p>
+</li>
+<li>
+<p>Despliegue en Firebase Hosting</p>
+</li>
+</ul>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd code
-npm install</code></pre>
+</li>
+</ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="master"><a class="anchor" href="#master"></a>Master</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Firebase</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Compilación para Firebase</p>
+</li>
+<li>
+<p>Despliegue snapshot en Firebase Hosting</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="sect1">
-<h2 id="ejecución-en-local"><a class="anchor" href="#ejecución-en-local"></a>Ejecución en local</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>El proyecto está preparado para autogenerarse en local con cualquier cambio que se realice:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run start</code></pre>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="spa.html">SPA</a></span>
-  <span class="next"><a href="spa-deployment.html">Deployment</a></span>
+  <span class="prev"><a href="deployment.html">Deployment</a></span>
+  <span class="next"><a href="development.html">Development</a></span>
 </nav>
 </article>
   </div>

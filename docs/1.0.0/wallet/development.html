@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>
-            Getting started ::
+            Development ::
 
             JF Team
     </title>
-    <link rel="canonical" href="https://jeferro.github.io/doc-jeferro/docs/1.0.0/wallet/getting-started.html">
-    <link rel="prev" href="../development/spa-firebase.html">
-    <link rel="next" href="deployment.html">
+    <link rel="canonical" href="https://jeferro.github.io/doc-jeferro/docs/1.0.0/wallet/development.html">
+    <link rel="prev" href="ci-cd.html">
+    <link rel="next" href="../doc-jeferro/getting-started.html">
     <meta name="generator" content="Antora 3.0.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -66,7 +66,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Wallet</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="getting-started.html">Getting started</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -75,7 +75,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="ci-cd.html">CI/CD</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="development.html">Development</a>
   </li>
 </ul>
@@ -104,71 +104,45 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Getting started</h1>
+<h1 class="page">Development</h1>
 <div class="sect1">
-<h2 id="introducción"><a class="anchor" href="#introducción"></a>Introducción</h2>
+<h2 id="repository"><a class="anchor" href="#repository"></a>Repository</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Sistema para el control de la economia de una persona. Permite registrar límite en las diferentes categorias existentes, registrar gastos o ingresos en dichas categorias y obtener información de estado de los gastos en el mes actual o histórico.</p>
+<p><a href="https://github.com/jeferro/spa-wallet" class="bare">https://github.com/jeferro/spa-wallet</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="diagrama-de-integración"><a class="anchor" href="#diagrama-de-integración"></a>Diagrama de Integración</h2>
+<h2 id="instalación-en-local"><a class="anchor" href="#instalación-en-local"></a>Instalación en local</h2>
 <div class="sectionbody">
-<div class="imageblock">
+<div class="paragraph">
+<p>Como primer paso debemos instalar las librerias necesarias:</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<img src="_images/integration-diagram.jpg" alt="integration diagram" width="381px">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd code
+npm install</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="entornos"><a class="anchor" href="#entornos"></a>Entornos</h2>
+<h2 id="ejecución-en-local"><a class="anchor" href="#ejecución-en-local"></a>Ejecución en local</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="des"><a class="anchor" href="#des"></a>DES</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Se autodespliegue en este entorno el código de la rama <em>develop</em>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>El proyecto está preparado para autogenerarse en local con cualquier cambio que se realice:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>SPA: <a href="https://wallet.dev.jeferro.com" class="bare">https://wallet.dev.jeferro.com</a></p>
-</li>
-<li>
-<p>Consola Firebase: <a href="https://console.firebase.google.com/project/jf-wallet-dev/overview" class="bare">https://console.firebase.google.com/project/jf-wallet-dev/overview</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="pro"><a class="anchor" href="#pro"></a>PRO</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>SPA: <a href="https://wallet.jeferro.com" class="bare">https://wallet.jeferro.com</a></p>
-</li>
-<li>
-<p>Consola Firebase: <a href="https://console.firebase.google.com/project/jf-wallet/overview" class="bare">https://console.firebase.google.com/project/jf-wallet/overview</a></p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run start</code></pre>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../development/spa-firebase.html">Firebase</a></span>
-  <span class="next"><a href="deployment.html">Deployment</a></span>
+  <span class="prev"><a href="ci-cd.html">CI/CD</a></span>
+  <span class="next"><a href="../doc-jeferro/getting-started.html">Getting started</a></span>
 </nav>
 </article>
   </div>
