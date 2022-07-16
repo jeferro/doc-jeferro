@@ -20,6 +20,9 @@ En la sección "Issues -> Labels" se deben dejar unicamente los siguientes tags 
 
 | bugfix
 | #FE5CE6
+
+| release
+| #FBCA04
 |===
 
 
