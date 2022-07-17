@@ -23,6 +23,9 @@ En la sección "Issues -> Labels" se deben dejar unicamente los siguientes tags 
 
 | release
 | #FBCA04
+
+| automated
+| #5319E7
 |===
 
 
