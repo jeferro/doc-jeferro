@@ -29,4 +29,31 @@ En la sección "Issues -> Labels" se deben dejar unicamente los siguientes tags 
 |===
 
 
+=== Firebase
 
+Para los despliegues en Firebase, debemos crear un nuevo secret con el token de autenticación de Firebase.
+
+Entonces, como primer paso debemos crear el nuevo token:
+
+[code,bash]
+----
+npx firebase-tools login:ci
+----
+
+Y crear un nuevo secret en Github (Settings -> Secrets -> Actions):
+
+* Nombre: FIREBASE_TOKEN
+* Valor: token generado
+
+
+
+=== PAT del workflow
+
+Algunos workflows del CI/CD realizan operaciones sobre GitHub: creación de PR, comentarios, etc. Por esto se necesita un Personal Access Token o de una cuenta ya existe o idealmente de una nueva cuenta que identifique al usuario bot.
+
+Para generar el access token, se debe acceder a Settings -> Developer Settings -> Personal access tokens.
+
+Tras lo cual, debemos crear un nuevo secret en GitHub (Settings -> Secrets -> Actions):
+
+* Nombre: CICD_GITHUB_TOKEN
+* Valor: PAT generado
