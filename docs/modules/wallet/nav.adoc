@@ -1,5 +1,4 @@
 .Wallet
 * xref:getting-started.adoc[Getting started]
 * xref:deployment.adoc[Deployment]
-* xref:ci-cd.adoc[CI/CD]
 * xref:development.adoc[Development]
