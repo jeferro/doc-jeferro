@@ -73,9 +73,6 @@
     <a class="nav-link" href="../wallet/deployment.html">Deployment</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../wallet/ci-cd.html">CI/CD</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../wallet/development.html">Development</a>
   </li>
 </ul>
@@ -145,6 +142,55 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="firebase"><a class="anchor" href="#firebase"></a>Firebase</h3>
+<div class="paragraph">
+<p>Para los despliegues en Firebase, debemos crear un nuevo secret con el token de autenticación de Firebase.</p>
+</div>
+<div class="paragraph">
+<p>Entonces, como primer paso debemos crear el nuevo token:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>npx firebase-tools login:ci</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Y crear un nuevo secret en Github (Settings &#8594; Secrets &#8594; Actions):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Nombre: FIREBASE_TOKEN</p>
+</li>
+<li>
+<p>Valor: token generado</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="pat-del-workflow"><a class="anchor" href="#pat-del-workflow"></a>PAT del workflow</h3>
+<div class="paragraph">
+<p>Algunos workflows del CI/CD realizan operaciones sobre GitHub: creación de PR, comentarios, etc. Por esto se necesita un Personal Access Token o de una cuenta ya existe o idealmente de una nueva cuenta que identifique al usuario bot.</p>
+</div>
+<div class="paragraph">
+<p>Para generar el access token, se debe acceder a Settings &#8594; Developer Settings &#8594; Personal access tokens.</p>
+</div>
+<div class="paragraph">
+<p>Tras lo cual, debemos crear un nuevo secret en GitHub (Settings &#8594; Secrets &#8594; Actions):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Nombre: CICD_GITHUB_TOKEN</p>
+</li>
+<li>
+<p>Valor: PAT generado</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
